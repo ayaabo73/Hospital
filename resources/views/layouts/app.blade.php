@@ -12,8 +12,10 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
-      
-            @include('layouts.navigation')
+        <link rel="stylesheet"href="{{ asset ('css/app.css') }}">  
+        <script src ="{{asset('js/app.js')}}"></script>
+
+        @include('layouts.navigation')
 
             <!-- Page Heading -->
             @if (isset($header))

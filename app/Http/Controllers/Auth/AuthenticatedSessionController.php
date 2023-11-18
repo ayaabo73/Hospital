@@ -17,12 +17,10 @@ class AuthenticatedSessionController extends Controller
      */
     public function create(): View
     {
-        return view('dashboard.user.auth.login');
+        return view('dashboard.user.auth.signin');
     }
 
-    /**
-     * Handle an incoming authentication request.
-     */
+  
     public function store(LoginRequest $request): RedirectResponse
     {
         $request->authenticate();
@@ -32,9 +30,7 @@ class AuthenticatedSessionController extends Controller
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 
-    /**
-     * Destroy an authenticated session.
-     */
+
     public function destroy(Request $request): RedirectResponse
     {
         Auth::guard('web')->logout();

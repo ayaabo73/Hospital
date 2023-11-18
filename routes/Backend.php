@@ -18,5 +18,10 @@ Route::get('dashboard_admain', [dashoardcontrooler::class, 'index']);
 
 Route::get('/dashboard/user', function () {
     return view('dashboard.user.dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard.user');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/dashboard/admin', function () {
+    return view('dashboard.admin.dashboard');
+})->middleware(['auth:admin', 'verified'])->name('dashboard');
+
 require __DIR__.'/auth.php';
